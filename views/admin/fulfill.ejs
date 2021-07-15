@@ -30,7 +30,7 @@
       <div class="nav-wrapper black lighten-1">
         <a href="#!" class="brand-logo">
           <img
-            src="logo.png"
+            src="/logo.png"
             style="height: 80px; width: 80px; margin: 20px; border-radius: 50%"
           />
         </a>
@@ -38,30 +38,36 @@
     </nav>
 
     <div class="container">
-      <h4 class="white-text">Plans for User Id: <%= user %></h4>
-      <div id="example-table"></div>
+      <h1 class="white-text"> Fulfill Plan</h1>
+
+      <h4  class="white-text">Plan: <%= order.planName %> </h2>
+      <h4  class="white-text">Amount: <%= order.proxyAmount %> </h2>
+      <div id="custom">
+           <div class="row white-text">
+        <form class="col s12" id="server" action="<%- order._id %>"  method="POST">
+          <div class="row">
+            <div class="input-field col s12">
+              <textarea
+                name="proxies"
+                id="textarea1"
+                class="materialize-textarea white-text"
+                form="server"
+              ></textarea>
+              <label for="textarea1">Proxies</label>
+            </div>
+          </div>
+
+          <div class="row">
+          <input
+            class="btn waves-effect waves-light"
+            type="submit"
+            name="action"
+          >
+        </input>
+        </div>
+        </form>
+      </div>
+      </div>
     </div>
   </body>
-  <script>
-    var tabledata = <%- JSON.stringify(orders) %>;
-    var table = new Tabulator("#example-table", {
-      height: 400, // set height of table (in CSS or here), this enables the Virtual DOM and improves render speed dramatically (can be any valid css height value)
-      data: tabledata, //assign data to table
-      layout: "fitColumns", //fit columns to width of table (optional)
-      columns: [
-        //Define Table Columns
-        { title: "Id", field: "_id", width: 250 },
-        { title: "Plan Name", field: "planName", width: 50 },
-        { title: "Proxy Amt", field: "proxyAmount"},
-        { title: "Start Date", field: "startDate" },
-        { title: "End Date", field: "endDate"},
-        { title: "proxy_username", field: "proxyUser"},
-        { title: "proxy_password", field: "proxyUserPassword"},
-        { title: "server", field: "server"}
-      ],
-      rowClick: function(e, row) {
-
-      }
-    });
-  </script>
 </html>

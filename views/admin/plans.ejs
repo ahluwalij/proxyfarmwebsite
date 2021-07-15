@@ -30,8 +30,8 @@
       <div class="nav-wrapper black lighten-1">
         <a href="#!" class="brand-logo">
           <img
-            src="https://arrowproxies.com/Images/2x/Asset%201@2x.png"
-            style="height:50px; width: 50px; margin:10px;"
+            src="logo.png"
+            style="height: 80px; width: 80px; margin: 20px; border-radius: 50%"
           />
         </a>
         <ul class="right hide-on-med-and-down">
@@ -50,7 +50,7 @@
 
     <div class="container">
       <h1 class="white-text">Plans</h1>
-      <h6 class="white-text">Vaccant Proxies : <%=totalProxies %> </h6>
+      <!-- <h6 class="white-text">Vaccant Proxies : <%=totalProxies %> </h6> -->
       <h6 class="white-text">Stock Allocated : <%= totalStocked %> </h6>
       <h6 class="white-text">Sale Live : <%=LIVE%>  (<a href="/sfth/setlive/ON">START SALE</a> // <a href="/sfth/setlive/off">END SALE</a>)  </h6>
       <h6 class="white-text">Password: <%= PASSWORD %> </h6>
@@ -59,6 +59,9 @@
         <input type="submit" class="btn" value="Set" />
       </form>
       <h3 class="white-text">Public Plans</h3>
+      <a href="/sfth/newpublic" class="waves-effect waves-light btn">New Public Plan</a>
+      <br>
+      <br>
       <div id="example-table"></div>
       <h3 class="white-text">Custom Plans </button></h3> 
       <a href="/sfth/newplan" class="waves-effect waves-light btn">New Custom Plan</a>

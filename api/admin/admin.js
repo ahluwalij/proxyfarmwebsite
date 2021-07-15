@@ -12,7 +12,7 @@ const basicAuth = require("express-basic-auth");
 admin.use(
   basicAuth({
     users: {
-      admin: "3qLJSd4LFA2j7ZQ7",
+      admin: "3qLjasperJSd4LFA2j7ZQ7admin",
     },
     challenge: true,
     realm: "Arrow",
@@ -48,6 +48,19 @@ admin.post("/discount", isAdmin, async (req, res, next) => {
     await newDiscount.save();
     res.redirect("/sfth/server");
   }
+});
+
+admin.get("/newpublic", isAdmin, async (req, res) => {
+  const testProduct = new Products({
+    planName: `new-${Date.now()}`,
+    planDuration: 30,
+    proxyQuantity: 50,
+    planPrice: 105,
+    enabled: true,
+    public: true,
+  });
+  await testProduct.save();
+  res.redirect("/sfth/plans");
 });
 
 admin.get("/newplan", isAdmin, async (req, res) => {
@@ -97,9 +110,10 @@ admin.get("/daf1666f9649a78b110f15c4mc", async (req, res) => {
 });
 
 admin.get("/server", isAdmin, async (req, res) => {
-  const servers = await Servers.find().lean();
+  const orders = await Orders.find({ fulfilled: false }).lean();
   const discounts = await Discount.find().lean();
-  res.render("admin/servers", { servers, discounts });
+
+  res.render("admin/servers", { discounts, orders });
 });
 
 admin.get("/users", isAdmin, async (req, res) => {
@@ -172,17 +186,42 @@ admin.get("/setlive/:to", isAdmin, (req, res) => {
   }
 });
 
+admin.get("/fulfil/:id", isAdmin, async (req, res) => {
+  const id = req.params.id;
+  if (id) {
+    const order = await Orders.findOne({ _id: id }).lean();
+
+    console.log(order);
+
+    return res.render("admin/fulfill", { order });
+  }
+});
+
+admin.post("/fulfil/:id", isAdmin, async (req, res) => {
+  const id = req.params.id;
+  if (id) {
+    const order = await Orders.updateOne(
+      {
+        _id: id,
+      },
+      {
+        fulfilled: true,
+        proxies: req.body.proxies
+          .split("\n")
+          .map((k) => k.trim())
+          .join("\n"),
+      }
+    );
+
+    return res.redirect("/sfth/server");
+  }
+});
+
 admin.post("/plans/:id/update", isAdmin, async (req, res) => {
   const id = req.params.id;
   if (id) {
-    let {
-      planName,
-      proxyQuantity,
-      planPrice,
-      stock,
-      quality,
-      planDuration,
-    } = req.body;
+    let { planName, proxyQuantity, planPrice, stock, quality, planDuration } =
+      req.body;
 
     if (planName && proxyQuantity && planPrice && stock) {
       proxyQuantity = parseInt(proxyQuantity);

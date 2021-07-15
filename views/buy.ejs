@@ -7,12 +7,18 @@
     
     <script src="https://js.stripe.com/v3/"></script>
     <script src="/script.js" defer></script>
+    <link rel="stylesheet" href="/style.css" />
     <link rel="stylesheet" href="/css/global.css" />
     <link rel="stylesheet" href="/assets/bootstrap.css">
     <link rel="stylesheet" href="/assets/style.css" />
-    <title>Buy Arrow Proxies</title>
+    <title>ProxyFarm - Buy | Purchase Proxies</title>
+    <link rel="icon" href="/logo.png" type="image/png" sizes="16x16" />
     <style>
       body{
+        background-image: url("/assets/bg.png");
+    background-size: cover;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
         min-height: 100vh;
         display: flex;
         flex-direction: column;
@@ -26,65 +32,22 @@
         font-size: 20px !important;
       }
     </style>
-    <canvas id="canvas1"> </canvas>
-    <div class="postloginnav">
-      <div class="navgrid">
-      <div class="userdetails">
-          <div class="username bold"><%= user.discordUsername %></div>
-        <div class="logout" onclick="window.location='/logout'"><img src="/assets/Logout.svg" alt=""></div>
-        
-      </div>
-      <div class="navlinks">
-        <a href="/purchase" class="navactive ">Purchase</a>
-        <a href="https://dash.arrowproxies.com/store" class="">Store</a>
-        <!-- <a href="#" class="bold">Profile</a> -->
-        <a href="/" class="">Dashboard</a>
-      </div>  
-      </div>
-      <div class="userimg">
-        <img src="<%= user.discordImage %>" alt="">
-      </div>
-    </div>
+    
     <div class="container">
       <div class="loginwrapper">
         <div class="loginsection">
           <div class="logintext bold">
             Checkout
           </div>
-          <div class="smtext">PLEASE CHECKOUT BELOW.</div>
-  
-          <div class="row flex-nowrap mb-lg-5">
-            <div class="contents col-md-4">
-              <img class="shop" src="/assets/purchase.svg" alt="">
-  
-              <div class="productscontainer">
-              <div class="products">
-                <div class="productname bold">
-                  1x <%= item %> Proxies
-                </div>
-               
-              </div>
-
-
-            </div>
-
-            <div class="amount">
-              <div class="subtotal">Subtotal:  <span>$<%= price %></span></div>
-
-              <div class="tax">Discount: <span id="total-discount">$0.00</span></div>
-              
-              <div class="total bold">Total: <span id="total-price">$<%= price %></span></div>
-            </div>
-            </div>
-  
-           
-             
-            
+          <div class="smtext">PLEASE CHECKOUT BELOW.</div>           
             <div class="customerdetails col-md-8">
               <form id="payment-form" class="" style="width: 100%;">
                
              
               <div class="mb-3 item">
+                <div class="productname bold">
+                  1x <%= item %> Proxies
+                </div>
                 <label for="address" class="bold">Discount</label>
                 <input type="text" class="form-control" id="discountcode" placeholder="Discount Code" onblur="discount(this)" >
               </div>
@@ -93,8 +56,16 @@
               <div class="sr-combo-inputs-row" style="margin-bottom: 2rem;">
                 <div class="sr-input sr-card-element" id="card-element"></div>
               </div>
-              <button id="submit" class="paybtn bold">
+              <div class="amount">
+                <div class="subtotal">Subtotal:  <span>$<%= price %></span></div>
+  
+                <div class="tax">Discount: <span id="total-discount">$0.00</span></div>
+                
+                <div class="total bold">Total: <span id="total-price">$<%= price %></span></div>
+              </div>
+              <button  id="submit" class="paybtn bold">
                 <div class="spinner hidden" id="spinner"></div>
+                
                 <span id="button-text">PAY $<%= price %></span><span id="order-amount"></span>
               </button>
   <!-- <button class="paybtn bold">PAY $77.54</button> -->
@@ -107,38 +78,7 @@
         </div>
       </div>
       </div>
-    <footer>
-      <div class="footercontainer">
-        <div class="secone">
-          <img src="/assets/Arrow_PNG.png" alt="" />
-          <p class="light">ARROW PROXIES</p>
-        </div>
-
-        <div class="sectwo">
-          <a href="#"><div class="footerheader">Menu</div></a>
-          <a href="#"> <div class="footerlinks">Home</div></a>
-          <a href="#"> <div class="footerlinks">Features</div></a>
-          <a href="#"> <div class="footerlinks">Purchase</div></a>
-          <a href="#"> <div class="footerlinks">FAQ</div></a>
-        </div>
-
-        <div class="secthree">
-          <a href="#"> <div class="footerheader">Resources</div></a>
-          <a href="#"> <div class="footerlinks">Terms of Policy</div></a>
-          <a href="#"> <div class="footerlinks">Privacy Policy</div></a>
-        </div>
-
-        <div class="secfour">
-          <a href="#"> <div class="footerheader">Get In Touch</div></a>
-          <a href="#"><div class="footerlinks">arrowproxies@gmail.com</div></a>
-        </div>
-
-        <div class="secfive">
-          <a href="#"> <img src="/assets/Footer twitter.svg" alt="" /></a>
-          <a href="#"><img src="/assets/Footer instagram.svg" alt="" /></a>
-          <a href="#"> <img src="/assets/Footer discord.svg" alt="" /></a>
-        </div>
-    </footer>
+    
     <script src="/assets/js/bg.js"></script>
   </body>
   <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script> 

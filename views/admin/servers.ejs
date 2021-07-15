@@ -11,6 +11,14 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"
     />
     <link
+    href="https://unpkg.com/tabulator-tables@4.5.3/dist/css/tabulator.min.css"
+    rel="stylesheet"
+  />
+  <script
+  type="text/javascript"
+  src="https://unpkg.com/tabulator-tables@4.5.3/dist/js/tabulator.min.js"
+></script>
+    <link
       href="https://fonts.googleapis.com/icon?family=Material+Icons"
       rel="stylesheet"
     />
@@ -23,8 +31,8 @@
       <div class="nav-wrapper black lighten-1">
         <a href="#!" class="brand-logo">
           <img
-            src="https://arrowproxies.com/Images/2x/Asset%201@2x.png"
-            style="height:50px; width: 50px; margin:10px;"
+            src="logo.png"
+            style="height: 80px; width: 80px; margin: 20px; border-radius: 50%"
           />
         </a>
         <ul class="right hide-on-med-and-down">
@@ -45,111 +53,11 @@
 
     <div class="container">
       <h1 class="white-text">Management</h1>
-        <a
-            class="btn waves-effect waves-light"
-            type="submit"
-            name="action"
-            href="/sfth/runloop"
-          >RUN LOOP</a>
-      <h1 class="white-text">Servers</h1>
+      
+      <h1 class="white-text">Fulfilment Center</h1>
+      <div id="example-table"></div>
     
-      <div class="row">
-        <% servers.forEach((server) => { %>
-          <div class="col l4 s6 m6">
-          <div class="card blue-grey darken-1">
-            <div class="card-content teal darken-3 white-text">
-              <span class="card-title"><%= server.alias %></span>
-              <p>
-                <b>Total IPS</b> <%= server.totalAmount %> <br />
-                <b>Vaccant IPS</b> <%= server.vaccantAmount %> <br />
-                <b>Controller </b> <%= server.controller %>
-              </p>
-            </div>
-            <div class="card-action teal darken-3">
-              <a href="#">Update Server</a>
-              <a href="#">Delete Server</a>
-            </div>
-          </div>
-        </div>
-       <% }) %>
-       
-      </div>
-      <h4 class="white-text">Add Server</h4>
-      <div class="row white-text">
-        <form class="col s12" action="/sfth/server"  method="POST" id="server">
-          <div class="row">
-            <div class="input-field col s6">
-              <input
-                placeholder="Server A"
-                id="first_name"
-                type="text"
-                name="alias"
-                class="white-text"
-              />
-              <label for="first_name">Alias</label>
-            </div>
-            <div class="input-field col s6">
-              <input
-                placeholder="SSADJJQWODIQJDOIQWJD"
-                name="authToken"
-                id="first_name"
-                type="text"
-                class="white-text"
-              />
-              <label for="first_name">Auth Token</label>
-            </div>
-            <div class="input-field col s6">
-              <input
-                placeholder="http://ip:port"
-                id="first_name"
-                name="controller"
-                type="text"
-                class="white-text"
-              />
-              <label for="first_name">Controller</label>
-            </div>
-            <div class="input-field col s6">
-              <input
-                placeholder="3128"
-                id="first_name"
-                name="port"
-                type="text"
-                class="white-text"
-              />
-              <label for="first_name">Port</label>
-            </div>
-          </div>
-          <div class="row">
-            <div class="input-field col s12">
-              <input
-                name="quality"
-                id="textarea2"
-                class="materialize-textarea white-text"
-                form="server"
-              ></input>
-              <label for="textarea2">Quality Index</label>
-            </div>
-          </div>
-          <div class="row">
-            <div class="input-field col s12">
-              <textarea
-                name="ips"
-                id="textarea1"
-                class="materialize-textarea white-text"
-                form="server"
-              ></textarea>
-              <label for="textarea1">IPs</label>
-            </div>
-          </div>
-
-          <input
-            class="btn waves-effect waves-light"
-            type="submit"
-            name="action"
-          >
-        </input>
-        </form>
-      </div>
+    
 
       
       <br>
@@ -208,5 +116,25 @@
         </input>
         </form>
     </div>
+    <script>
+      var tabledata = <%- JSON.stringify(orders) %>;
+      var table = new Tabulator("#example-table", {
+        height: 400, // set height of table (in CSS or here), this enables the Virtual DOM and improves render speed dramatically (can be any valid css height value)
+        data: tabledata, //assign data to table
+        layout: "fitColumns", //fit columns to width of table (optional)
+        columns: [
+          //Define Table Columns
+          { title: "Id", field: "_id" },
+          { title: "Plan", field: "planName"},
+          { title: "Qty", field: "proxyAmount"},
+          { title: "Start", field: "startDate"},
+          { title: "End", field: "endDate"},
+        ],
+        rowClick: function(e, row) {
+          window.location.href=  `/sfth/fulfil/${row._row.data._id}`;
+        }
+      });
+    </script>
   </body>
+
 </html>

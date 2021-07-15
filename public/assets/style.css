@@ -4,90 +4,21 @@
   box-sizing: border-box;
 }
 
-@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,500;1,700&display=swap");
-
-@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&display=swap");
-
-@font-face {
-  font-family: "Whitney Medium";
-  font-style: normal;
-  font-weight: normal;
-  src: local("Whitney Medium"), url("whitneymedium.woff") format("woff");
-}
-
-@font-face {
-  font-family: "Whitney Medium Italic";
-  font-style: normal;
-  font-weight: normal;
-  src: local("Whitney Medium Italic"),
-    url("whitneymediumitalic.woff") format("woff");
-}
-
-@font-face {
-  font-family: "Whitney Bold";
-  font-style: normal;
-  font-weight: normal;
-  src: local("Whitney Bold"), url("whitneybold.woff") format("woff");
-}
-
-@font-face {
-  font-family: "Whitney Semibold Regular";
-  font-style: normal;
-  font-weight: normal;
-  src: local("Whitney Semibold Regular"),
-    url("whitneysemibold.woff") format("woff");
-}
-
-@font-face {
-  font-family: "Whitney Book Regular";
-  font-style: normal;
-  font-weight: normal;
-  src: local("Whitney Book Regular"), url("whitneybook.woff") format("woff");
-}
-
-@font-face {
-  font-family: "Whitney Light Regular";
-  font-style: normal;
-  font-weight: normal;
-  src: local("Whitney Light Regular"), url("whitneylight.woff") format("woff");
-}
-
-@font-face {
-  font-family: "Whitney Semibold Italic";
-  font-style: normal;
-  font-weight: normal;
-  src: local("Whitney Semibold Italic"),
-    url("WhitneySemiboldItalic.woff") format("woff");
-}
-
-@font-face {
-  font-family: "Whitney Book Italic";
-  font-style: normal;
-  font-weight: normal;
-  src: local("Whitney Book Italic"),
-    url("whitneybookitalic.woff") format("woff");
-}
-
-@font-face {
-  font-family: "Whitney Light Italic";
-  font-style: normal;
-  font-weight: normal;
-  src: local("Whitney Light Italic"),
-    url("whitneylightitalic.woff") format("woff");
-}
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap");
 
 body {
-  font-family: "Whitney Book Regular";
+  font-family: "Inter" !important;
   overflow-x: hidden;
 }
 
 .wrapper {
   margin: auto;
+  width: 100%;
   max-width: 1920px;
 }
 
 .bold {
-  font-family: "Whitney Bold";
+  font-family: "Inter" !important;
 }
 
 #canvas1 {
@@ -420,6 +351,7 @@ footer {
 
 .loginwrapper {
   padding: 0rem 1rem;
+  width: 100%;
 }
 
 .loginsection {
@@ -432,6 +364,7 @@ footer {
 .logintext {
   margin: 1rem 0rem;
   font-size: 70px;
+  font-weight: 600;
 }
 
 .smtext {
@@ -634,6 +567,7 @@ a:visited {
 .productname {
   font-size: 20px;
   padding: 10px;
+  font-weight: 600;
   width: 100%;
 }
 
@@ -678,6 +612,8 @@ a {
   outline: none;
   border: none;
   color: #ffffff;
+  max-width: 100% !important;
+  width: 100% !important;
   cursor: pointer;
   font-size: 20px;
 }
@@ -700,8 +636,9 @@ a {
 .customerdetails {
   padding: 3rem !important;
   width: 100%;
-  background: #f6f6f6;
+  background: #fff;
   border-radius: 25px;
+  max-width: 650px;
 }
 
 .checkout {
@@ -737,11 +674,13 @@ label {
 .success {
   max-width: 520px;
   padding: 4rem;
-  padding-right: 7rem;
+  font-size: 1rem;
 }
 
 .success .text {
-  max-width: 70%;
+  max-width: 100%;
+  font-size: 1.2rem;
+  margin-top: 1rem;
 }
 
 .store {
@@ -830,6 +769,12 @@ label {
     padding: 0rem;
     margin-bottom: 3rem;
   }
+}
+.container {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 @media (max-width: 767px) {
@@ -1032,7 +977,7 @@ label {
 
 @media (min-width: 1921px) {
   .feature {
-    font-size: 39px;
+    font-size: 30px;
   }
 
   .features {
@@ -1187,11 +1132,11 @@ input[type="number"] {
 }
 
 button {
-  background: var(--accent-color);
   border-radius: var(--radius);
   color: white;
   border: 0;
   padding: 12px 16px;
+  background-color: #27c88a !important;
   margin-top: 16px;
   font-weight: 600;
   cursor: pointer;

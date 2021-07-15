@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/assets/bootstrap.css">
+    <link rel="stylesheet" href="./assets/style.css" />
+   
+    <title>ProxyFarm - Pay with card </title>
+    <link rel="icon" href="logo.png" type="image/png" sizes="16x16" />
+    <style>
+      body {
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+      }
+      a:hover {
+        filter: brightness(0.8);
+      }
+    </style>
+    <script
+      src="https://code.jquery.com/jquery-3.5.1.min.js"
+      integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0="
+      crossorigin="anonymous"
+    ></script>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+  </head>
+  <body>
+    <canvas id="canvas1"> </canvas>
+    <% if(user) {%>
+      <div class="postloginnav">
+        <div class="navgrid">
+        <div class="userdetails">
+            <div class="username bold"><%= user.discordUsername %></div>
+          <div class="logout" onclick="window.location='/logout'"><img src="/assets/Logout.svg" alt=""></div>
+          
+        </div>
+        <div class="navlinks">
+          <a href="/purchase" class="navactive ">Purchase</a>
+          <a href="https://dash.arrowproxies.com/store" class="">Store</a>
+          <!-- <a href="#" class="bold">Profile</a> -->
+          <a href="/" class="">Dashboard</a>
+        </div>  
+        </div>
+        <div class="userimg">
+          <img src="<%= user.discordImage %>" alt="">
+        </div>
+      </div>
+    <%} else {%>  
+      <nav>
+        <ul class="links">
+          <li>
+            <a href="#" class="bold">
+              <img src="./assets/Arrow_PNG.png" alt="" class="logo" />
+            </a>
+          </li>
+          <li>
+            <a href="https://arrowproxies.com/"> Home </a>
+          </li>
+          <li>
+            <a href="https://arrowproxies.com/"> Features </a>
+          </li>
+          <li>
+            <a href="#" class="bold"> Purchase </a>
+          </li>
+          <li class="login">
+            <a href="https://dash.arrowproxies.com/" class="bold">
+              <span><img src="./assets/Discord-Logo-White(3).svg" alt="" /></span>
+              Login
+            </a>
+          </li>
+        </ul>
+      </nav>
+    <%}%>
+   
+    <div class="wrapper">
+      <div class="loginwrapper">
+        <div class="loginsection">
+          <div class="logintext bold">Purchase</div>
+          <div class="smtext">BUY PROXIES HERE</div>
+
+          <div class="flex bold">
+            <div class="daily active">
+              <a href="#" id="daily">Daily</a>
+            </div>
+
+            <div class="weekly">
+              <a href="#" id="weekly">Weekly</a>
+            </div>
+
+            <div class="monthly">
+              <a href="#" id="monthly">Monthly</a>
+            </div>
+          </div>
+          <div class="area" id="area"></div>
+        </div>
+      </div>
+    </div>
+    <footer>
+      <div class="footercontainer">
+          <div class="secone">
+              <img src="./assets/Arrow_PNG.png" alt="" />
+              <p class="light">ARROW PROXIES</p>
+          </div>
+
+          <div class="sectwo">
+              <a href="#">
+                  <div class="footerheader">Menu</div>
+              </a>
+              <a href="#">
+                  <div class="footerlinks">Home</div>
+              </a>
+              <a href="#">
+                  <div class="footerlinks">Features</div>
+              </a>
+              <a href="https://dash.arrowproxies.com/purchase">
+                  <div class="footerlinks">Purchase</div>
+              </a>
+
+          </div>
+
+          <div class="secthree">
+              <a href="#">
+                  <div class="footerheader">Resources</div>
+              </a>
+              <a href="https://arrowproxies.gitbook.io/arrow-proxies/terms-and-conditions">
+                  <div class="footerlinks">Terms of Policy</div>
+              </a>
+              <a href="https://arrowproxies.gitbook.io/arrow-proxies/">
+                  <div class="footerlinks">Privacy Policy</div>
+              </a>
+          </div>
+
+          <div class="secfour">
+              <a href="#">
+                  <div class="footerheader">Get In Touch</div>
+              </a>
+              <a href="#">
+                  <div class="footerlinks">arrowproxies@gmail.com</div>
+              </a>
+          </div>
+
+          <div class="secfive">
+              <a href="https://twitter.com/arrowaio"> <img src="./assets/Footer twitter.svg" alt="" /></a>
+              <a href="https://www.instagram.com/arrowaio/"><img src="./assets/Footer instagram.svg" alt="" /></a>
+              <a href="https://discord.gg/JFT34Hg"> <img src="./assets/Footer discord.svg" alt="" /></a>
+          </div>
+   </footer>
+    <script src="./assets/js/bg.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/lodash@4.17.15/lodash.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+      AOS.init();
+
+      let internalTime = {
+        daily: 1,
+        monthly: 30,
+        weekly: 7
+      };
+      let viewing = 1;
+
+      const aps = _.sortBy(
+        <%- JSON.stringify(publicProds) %>, 
+      ["planDuration"]
+      );
+
+      let planState = {};
+
+      aps.forEach((ap) => {
+        if (!planState[ap.planDuration]) {
+          planState[ap.planDuration] = {};
+        }
+        if (!planState[ap.planDuration][ap.serverType]) {
+          planState[ap.planDuration][ap.serverType] = [];
+        }
+
+        planState[ap.planDuration][ap.serverType].push(ap);
+      });
+
+      function stateChange(e) {
+        let config = e.value.split("-");
+        let planSelected = planState[config[0]][config[1]].find(
+          (k) => k.proxyQuantity == config[2]
+        );
+
+        let element = document.getElementById(`${config[0]}-${config[1]}`);
+        element.querySelector(`.purchaseheader`).innerHTML =
+          planSelected.planName;
+
+        element.querySelector(`.pay`).innerHTML = `${
+          planSelected.stock == 0
+            ? `<button class="purchasebtn bold" disabled>OOS</button>`
+            : `<button class="purchasebtn bold" onclick="window.location='/buy/${planSelected._id}'">$${planSelected.planPrice}</button>`
+        }`;
+      }
+
+      function producePriceBox(severType, planDuration) {
+        let plan = planState[planDuration][severType][0];
+
+        console.log(plan);
+        let plans = planState[planDuration][severType];
+
+        let planSelect = plans
+          .map(
+            (k) =>
+              `<option value="${planDuration}-${severType}-${k.proxyQuantity}"> ${k.proxyQuantity}</option>`
+          )
+          .join("");
+
+        return `<div class="pricebox" id="${planDuration}-${severType}" data-aos="zoom-out">
+      <select name="" id="" class="bold" onchange="stateChange(this)">
+          ${planSelect}
+      </select>
+
+      <div class="purchaseheader bold">
+        ${plan.planName} 
+      </div>
+      <div class="purchasefeatures">
+        <ul class="bold">
+          <li>
+            Unlimited Data
+          </li>
+          <li>
+            Instant Delivery
+          </li>
+          <li>
+            Expires in ${planDuration} days
+          </li>
+        </ul>
+      </div>
+      <div class="pay">
+      ${
+        plan.stock == 0
+          ? `<button class="purchasebtn bold" disabled>OOS</button>`
+          : `<button class="purchasebtn bold" onclick="window.location='/buy/${plan._id}'">$${plan.planPrice}</button>`
+      }
+      </div>
+
+      </div>
+      `;
+      }
+
+      function renderPlans(duration) {
+        let servers = Object.keys(planState[duration]);
+        let finalInsert = ``;
+        for (let server of servers) {
+          planState[duration][server] = _.sortBy(planState[duration][server], [
+            "proxyQuantity",
+          ]);
+
+          finalInsert += producePriceBox(server, duration);
+        }
+
+        document.getElementById("area").innerHTML = finalInsert;
+      }
+
+      renderPlans(1);
+
+
+      $("#monthly").on("click", (e) => {
+        e.preventDefault();
+        viewing = 30;
+        $(".weekly, .daily").removeClass("active");
+        $(".monthly").addClass("active");
+        renderPlans(viewing);
+      });
+
+      $("#weekly").on("click", (e) => {
+        e.preventDefault();
+        viewing = 7;
+        $(".monthly, .daily").removeClass("active");
+        $(".weekly").addClass("active");
+        renderPlans(viewing);
+      });
+      $("#daily").on("click", (e) => {
+        e.preventDefault();
+        viewing = 1;
+        $(".weekly, .monthly").toggleClass("active");
+        $(".daily").addClass("active");
+        renderPlans(viewing);
+      });
+
+      // $("#monthly, #daily, #weekly").on("click", (e) => {
+       
+      
+       
+      //   viewing = viewing == 1 ? 30 : 1;
+      //   renderPlans(viewing);
+      // });
+
+      console.log(planState);
+    </script>
+  </body>
+</html>

@@ -42,8 +42,8 @@ passport.use(
     {
       authorizationURL: "https://discord.com/api/oauth2/authorize",
       tokenURL: "https://discord.com/api/oauth2/token",
-      clientID: "756902342481412256",
-      clientSecret: "f6LAaV5vkKSI5X9O7Y60Fw0bSgC5VNjt",
+      clientID: "470226299122876446",
+      clientSecret: "ymgJamVr8UD52jwh2h7fu8BHLdV_xeaW",
       callbackURL: process.env.CALLBACK,
     },
     async function (accessToken, refreshToken, profile, cb) {
@@ -90,7 +90,7 @@ const forgotController = require("./controllers/auth/forgot");
 const confirmResetController = require("./controllers/auth/confirmReset");
 
 mongoose
-  .connect("mongodb://localhost:27017/arrow2", {
+  .connect("mongodb://localhost:27017/proxyfarm", {
     useNewUrlParser: true,
     useUnifiedTopology: true,
     useCreateIndex: true,
@@ -104,14 +104,27 @@ const Order = require("./models/Orders");
 const allocationAlgorithm = require("./api/procedures/allocate");
 
 const Discounts = require("./models/Discounts");
+const Orders = require("./models/Orders");
 
-app.get("/", (req, res) => {
+app.get("/", async (req, res) => {
   console.log(req.user);
   if (!req.user || !req.user.discordId) {
     return res.render("index", { error: "" });
   }
 
-  return res.render("main");
+  console.log(req.user);
+  let buys = await Orders.find({
+    userId: req.user._id,
+  }).lean();
+  return res.render("main", { ...req.user, buys });
+});
+
+app.get("/resi", (req, res) => {
+  if (!req.user || !req.user.discordId) {
+    return res.render("index", { error: "" });
+  } else {
+    return res.render("resi", { ...req.user });
+  }
 });
 
 app.get(
@@ -201,6 +214,10 @@ app.get("/password", async (req, res) => {
 });
 
 app.get("/purchase", async (req, res) => {
+  if (!req.user || !req.user.discordId) {
+    return res.redirect("/");
+  }
+
   const publicProds = await Products.find({ public: true });
 
   if (LIVE) {
@@ -237,13 +254,8 @@ app.post("/pay", async (req, res) => {
   if (!req.user || !req.user.discordId) {
     return res.redirect("/");
   }
-  const {
-    paymentMethodId,
-    paymentIntentId,
-    items,
-    discount,
-    useStripeSdk,
-  } = req.body;
+  const { paymentMethodId, paymentIntentId, items, discount, useStripeSdk } =
+    req.body;
 
   try {
     let intent;

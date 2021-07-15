@@ -1,112 +1,195 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="utf-8" />
-    <link rel="icon" href="/favicon.ico" />
-    <meta name="viewport" content="width=device-width,initial-scale=1" />
-    <meta name="theme-color" content="#000000" />
-    <meta name="description" content="ArrowAIO Proxies Dashboard" />
-    <link rel="apple-touch-icon" href="/logo192.png" />
-    <link rel="manifest" href="/manifest.json" />
-    <title>Arrow Proxies | Dashboard</title>
-    <link href="/static/css/main.41112dbd.chunk.css" rel="stylesheet" />
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ProxyFarm - Dashboard | View Your Proxies</title>
+    <link rel="icon" href="logo.png" type="image/png" sizes="16x16" />
+    <link rel="stylesheet" href="./style.css" />
   </head>
   <body>
-    <noscript>You need to enable JavaScript to run this app.</noscript
-    ><canvas id="canvas1"></canvas>
-    <div id="root"></div>
-    <script src="./bg.js"></script>
+    <div class="scrollside none">
+      <div class="sidebar">
+        <img class="logoimg" src="/logo.png" alt="" />
+
+        <div class="links">
+          <a href="/">ISP</a>
+          <a href="/resi">RESIDENTIAL</a>
+
+          <a href="/purchase">PURCHASE</a>
+        </div>
+        <div class="socials">
+          <div class="mail">
+            <img src="./assets/mail.svg" />
+          </div>
+          <div class="twitter">
+            <img src="./assets/twitter.svg" />
+          </div>
+          <div class="tos">
+            <img
+              src="https://img.icons8.com/material-rounded/96/ffffff/terms-and-conditions.png"
+            />
+          </div>
+        </div>
+        <div class="close">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="36"
+            height="36"
+            viewBox="0 0 18 18"
+          >
+            <path
+              fill="#fff"
+              d="M14.53 4.53l-1.06-1.06L9 7.94 4.53 3.47 3.47 4.53 7.94 9l-4.47 4.47 1.06 1.06L9 10.06l4.47 4.47 1.06-1.06L10.06 9z"
+            />
+          </svg>
+        </div>
+      </div>
+    </div>
+    <div class="container">
+      <div class="sidebarcontainer">
+        <div class="sidebar">
+          <img class="logoimg" src="/logo.png" alt="" />
+
+          <div class="links">
+            <a href="/">ISP</a>
+            <a href="/resi">RESIDENTIAL</a>
+            <a href="/purchase">PURCHASE</a>
+          </div>
+          <div class="socials">
+            <div class="mail">
+              <img src="./assets/mail.svg" />
+            </div>
+            <div class="twitter">
+              <img src="./assets/twitter.svg" />
+            </div>
+            <div class="tos">
+              <img
+                src="https://img.icons8.com/material-rounded/96/ffffff/terms-and-conditions.png"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="main">
+        <div class="bar">
+          <div class="hamburger">
+            <div class="hamburger-box">
+              <div class="hamburger-inner"></div>
+            </div>
+          </div>
+        </div>
+        <div class="flex sp-bt topbar">
+          <div class="page">
+            <div class="header">ISP</div>
+            <div class="smtext">Access your ISP Proxies</div>
+          </div>
+          <div class="user">
+            <img src="<%- discordImage %>" alt="" class="userimg" />
+            <span class="name"> <%= discordUsername %> </span>
+            <a href="/logout" class="logoutbtn"
+              ><img src="/assets/Logout.svg" alt=""
+            /></a>
+          </div>
+        </div>
+        <div class="history">
+          <div class="scroll" id="content">
+            <div class="date">ISP 25 (03/04/2021)</div>
+            <div class="proxies">
+              <p>proxy.proxyfarm.com:123232:redux:react</p>
+              <p>proxy.proxyfarm.com:123232:redux:react</p>
+              <p>proxy.proxyfarm.com:123232:redux:react</p>
+              <p>proxy.proxyfarm.com:123232:redux:react</p>
+              <p>proxy.proxyfarm.com:123232:redux:react</p>
+              <p>proxy.proxyfarm.com:123232:redux:react</p>
+              <p>proxy.proxyfarm.com:123232:redux:react</p>
+              <p>proxy.proxyfarm.com:123232:redux:react</p>
+              <p>proxy.proxyfarm.com:123232:redux:react</p>
+            </div>
+            <div class="date">ISP 25 (03/04/2021)</div>
+            <div class="proxies">
+              <p>proxy.proxyfarm.com:123232:redux:react</p>
+              <p>proxy.proxyfarm.com:123232:redux:react</p>
+              <p>proxy.proxyfarm.com:123232:redux:react</p>
+              <p>proxy.proxyfarm.com:123232:redux:react</p>
+              <p>proxy.proxyfarm.com:123232:redux:react</p>
+              <p>proxy.proxyfarm.com:123232:redux:react</p>
+              <p>proxy.proxyfarm.com:123232:redux:react</p>
+              <p>proxy.proxyfarm.com:123232:redux:react</p>
+              <p>proxy.proxyfarm.com:123232:redux:react</p>
+            </div>
+            <div class="date">ISP 25 (03/04/2021)</div>
+            <div class="proxies">
+              <p>proxy.proxyfarm.com:123232:redux:react</p>
+              <p>proxy.proxyfarm.com:123232:redux:react</p>
+              <p>proxy.proxyfarm.com:123232:redux:react</p>
+              <p>proxy.proxyfarm.com:123232:redux:react</p>
+              <p>proxy.proxyfarm.com:123232:redux:react</p>
+              <p>proxy.proxyfarm.com:123232:redux:react</p>
+              <p>proxy.proxyfarm.com:123232:redux:react</p>
+              <p>proxy.proxyfarm.com:123232:redux:react</p>
+              <p>proxy.proxyfarm.com:123232:redux:react</p>
+            </div>
+            <div class="date">ISP 25 (03/04/2021)</div>
+            <div class="proxies">
+              <p>proxy.proxyfarm.com:123232:redux:react</p>
+              <p>proxy.proxyfarm.com:123232:redux:react</p>
+              <p>proxy.proxyfarm.com:123232:redux:react</p>
+              <p>proxy.proxyfarm.com:123232:redux:react</p>
+              <p>proxy.proxyfarm.com:123232:redux:react</p>
+              <p>proxy.proxyfarm.com:123232:redux:react</p>
+              <p>proxy.proxyfarm.com:123232:redux:react</p>
+              <p>proxy.proxyfarm.com:123232:redux:react</p>
+              <p>proxy.proxyfarm.com:123232:redux:react</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
     <script>
-      !(function (e) {
-        function r(r) {
-          for (
-            var n, l, a = r[0], f = r[1], i = r[2], c = 0, s = [];
-            c < a.length;
-            c++
-          )
-            (l = a[c]),
-              Object.prototype.hasOwnProperty.call(o, l) &&
-                o[l] &&
-                s.push(o[l][0]),
-              (o[l] = 0);
-          for (n in f)
-            Object.prototype.hasOwnProperty.call(f, n) && (e[n] = f[n]);
-          for (p && p(r); s.length; ) s.shift()();
-          return u.push.apply(u, i || []), t();
-        }
-        function t() {
-          for (var e, r = 0; r < u.length; r++) {
-            for (var t = u[r], n = !0, a = 1; a < t.length; a++) {
-              var f = t[a];
-              0 !== o[f] && (n = !1);
+            let burger = document.querySelector(".bar");
+            let sidebar = document.querySelector(".scrollside");
+            let close = document.querySelector(".close");
+
+            let content = document.getElementById('content');
+
+
+
+
+            const buys = <%- JSON.stringify(buys) %>;
+
+
+            content.innerHTML = buys.map((k,i) => `
+            <div style="display:flex; align-items: center;">
+                   <div class="date">${k.planName} (Expires ${new Date(k.endDate).toLocaleDateString(
+        'en-gb'
+      )})</div>
+      <button style="margin-top:0px; height:50px; width: 80px; margin-left:auto;" onclick="copy(${i})">Copy</button>
+      </div>
+                  <div class="proxies">
+                    ${!k.fulfilled ? "<p>Your proxies will be available soon! </p>" : k.proxies.split('\n').map(k => `<p> ${k} </p>`).join('\n')
+                    }
+                  </div>
+            `).join('\n');
+
+
+
+            function copy(index) {
+
+              navigator.clipboard.writeText(buys[index].proxies);
             }
-            n && (u.splice(r--, 1), (e = l((l.s = t[0]))));
-          }
-          return e;
-        }
-        var n = {},
-          o = { 1: 0 },
-          u = [];
-        function l(r) {
-          if (n[r]) return n[r].exports;
-          var t = (n[r] = { i: r, l: !1, exports: {} });
-          return e[r].call(t.exports, t, t.exports, l), (t.l = !0), t.exports;
-        }
-        (l.m = e),
-          (l.c = n),
-          (l.d = function (e, r, t) {
-            l.o(e, r) ||
-              Object.defineProperty(e, r, { enumerable: !0, get: t });
-          }),
-          (l.r = function (e) {
-            "undefined" != typeof Symbol &&
-              Symbol.toStringTag &&
-              Object.defineProperty(e, Symbol.toStringTag, { value: "Module" }),
-              Object.defineProperty(e, "__esModule", { value: !0 });
-          }),
-          (l.t = function (e, r) {
-            if ((1 & r && (e = l(e)), 8 & r)) return e;
-            if (4 & r && "object" == typeof e && e && e.__esModule) return e;
-            var t = Object.create(null);
-            if (
-              (l.r(t),
-              Object.defineProperty(t, "default", { enumerable: !0, value: e }),
-              2 & r && "string" != typeof e)
-            )
-              for (var n in e)
-                l.d(
-                  t,
-                  n,
-                  function (r) {
-                    return e[r];
-                  }.bind(null, n)
-                );
-            return t;
-          }),
-          (l.n = function (e) {
-            var r =
-              e && e.__esModule
-                ? function () {
-                    return e.default;
-                  }
-                : function () {
-                    return e;
-                  };
-            return l.d(r, "a", r), r;
-          }),
-          (l.o = function (e, r) {
-            return Object.prototype.hasOwnProperty.call(e, r);
-          }),
-          (l.p = "/");
-        var a = (this.webpackJsonparrow = this.webpackJsonparrow || []),
-          f = a.push.bind(a);
-        (a.push = r), (a = a.slice());
-        for (var i = 0; i < a.length; i++) r(a[i]);
-        var p = f;
-        t();
-      })([]);
+
+
+            burger.addEventListener("click", () => {
+              sidebar.classList.remove("none");
+              document.body.classList.add("noscroll");
+            });
+
+            close.addEventListener("click", () => {
+              sidebar.classList.add("none");
+              document.body.classList.remove("noscroll");
+            });
     </script>
-    <script src="/static/js/2.f777ad5b.chunk.js"></script>
-    <script src="/static/js/main.b28cbf07.chunk.js"></script>
   </body>
 </html>

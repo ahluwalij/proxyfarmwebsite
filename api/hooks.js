@@ -20,43 +20,41 @@ function serverMadeHook({ alias, port, totalAmount }) {
 }
 
 function PurchaseHook({ id, email, planName, stockLeft, discount, method }) {
-  const embed = new discord.RichEmbed()
-    .setTitle("New order recieved!")
-    .addField("User Id", id, true)
-    .addField("Email", email, false)
-    .addField("Discount", discount, false)
-    .setColor(4842881)
-    .addField("PlanName", planName, true)
-    .addField(
-      "Admin Actions",
-      `[Check payment method on stripe](https://dashboard.stripe.com/test/search?query=${method})`
-    )
-    .setFooter(
-      "Arrow Dashboard | @Dying#0001",
-      "https://arrowproxies.com/Images/2x/Asset%201@2x.png"
-    );
-
-  hook.send(embed);
+  // const embed = new discord.RichEmbed()
+  //   .setTitle("New order recieved!")
+  //   .addField("User Id", id, true)
+  //   .addField("Email", email, false)
+  //   .addField("Discount", discount, false)
+  //   .setColor(4842881)
+  //   .addField("PlanName", planName, true)
+  //   .addField(
+  //     "Admin Actions",
+  //     `[Check payment method on stripe](https://dashboard.stripe.com/test/search?query=${method})`
+  //   )
+  //   .setFooter(
+  //     "Arrow Dashboard | @Dying#0001",
+  //     "https://arrowproxies.com/Images/2x/Asset%201@2x.png"
+  //   );
+  // hook.send(embed);
 }
 
 function RenewHook({ id, email, planName, discount, method }) {
-  const embed = new discord.RichEmbed()
-    .setTitle("New order recieved!")
-    .addField("User Id", id, true)
-    .addField("Email", email, false)
-    .addField("Discount", discount, false)
-    .setColor(4842881)
-    .addField("PlanName", planName, true)
-    .addField(
-      "Admin Actions",
-      `[Check payment method on stripe](https://dashboard.stripe.com/test/search?query=${method})`
-    )
-    .setFooter(
-      "Arrow Dashboard | @Dying#0001",
-      "https://arrowproxies.com/Images/2x/Asset%201@2x.png"
-    );
-
-  renew.send(embed);
+  // const embed = new discord.RichEmbed()
+  //   .setTitle("New order recieved!")
+  //   .addField("User Id", id, true)
+  //   .addField("Email", email, false)
+  //   .addField("Discount", discount, false)
+  //   .setColor(4842881)
+  //   .addField("PlanName", planName, true)
+  //   .addField(
+  //     "Admin Actions",
+  //     `[Check payment method on stripe](https://dashboard.stripe.com/test/search?query=${method})`
+  //   )
+  //   .setFooter(
+  //     "Arrow Dashboard | @Dying#0001",
+  //     "https://arrowproxies.com/Images/2x/Asset%201@2x.png"
+  //   );
+  // renew.send(embed);
 }
 
 module.exports.ph = PurchaseHook;
