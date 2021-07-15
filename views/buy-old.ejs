@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Poppins:100i,200,300,400,500,700,700i&display=swap"
+      rel="stylesheet"
+    />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" href="/login.css" />
+    <link rel="stylesheet" href="/css/normalize.css" />
+    <link rel="stylesheet" href="/css/global.css" />
+    <script src="https://js.stripe.com/v3/"></script>
+    <script src="/script.js" defer></script>
+    <title>Buy Arrow proxies</title>
+  </head>
+
+  <body>
+    <nav>
+      <div class="brand">
+        <img src="/Asset 1.png" alt="" class="logo" />
+        <p class="arrowtxt">Purchase</p>
+      </div>
+      <div class="links">
+        <a href="https://arrowproxies.com/">Home</a>
+        <a href="/">Dashboard</a>
+        <a href="#" class="active1">Purchase Proxy</a>
+      </div>
+      <p class="user">
+        <span class="username"></span><span><a href="#" class="out"></a></span>
+      </p>
+    </nav>
+
+    <div class="change">
+      <div class="sr-main">
+        <form id="payment-form" class="sr-payment-form">
+          <center><img src="/Asset 1.png" id="logo" /> <br /></center>
+          <div class="sr-combo-inputs-row">
+            <div class="sr-input sr-card-element" id="card-element"></div>
+          </div>
+          <br>
+            <p style="color: black; margin-bottom: 15px; font-size: 12px;">Discount Code</p>
+          <div class="sr-combo-inputs-row">
+         
+            <input class="sr-input" id="discountcode" onblur="discount(this)"></input>
+       
+          </div>
+          <br>
+           <p style="color: black; margin-bottom: 15px; font-size: 12px;" id="disocuntmsg">
+             
+            </p>
+          <div class="sr-field-error" id="card-errors" role="alert"></div>
+          <button id="submit">
+            <div class="spinner hidden" id="spinner"></div>
+            <span id="button-text">Pay</span><span id="order-amount"></span>
+          </button>
+        </form>
+        <div class="sr-result hidden">
+          <br />
+          <br />
+          <center>
+          <img src="https://arrowproxies.com/Images/2x/Asset%201@2x.png"/>
+          <p style="color: black; margin-top: 50px;">
+            Congratulations,
+            You're now a member of the arrow family! Check your dashboard and
+            start using the best proxies in the game right away!
+          </p>
+          </center>
+          <br />
+        </div>
+      </div>
+    </div>
+  </body>
+  <script>
+    var orderData = {
+      items: ["<%= item %>"],
+      currency: "usd"
+    };
+  </script>
+</html>

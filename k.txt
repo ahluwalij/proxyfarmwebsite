@@ -1,0 +1,14 @@
+Dahsboar Server DB Details
+
+hostname: 206.189.236.243
+username: root
+password: daf1666f9649a78b110f15c4bd
+port: 22
+
+IGNORE ALL THINGS BELOW
+27017
+
+COMCAST 1 - 5e7a62a091ce327d09f9b870
+COMCAST 2 - 5e7a6f0c91ce327d09f9c16c
+
+port - 65243

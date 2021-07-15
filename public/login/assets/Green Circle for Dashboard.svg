@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="267" height="267" viewBox="0 0 267 267">
+  <defs>
+    <filter id="Green_Circle_for_Dashboard" x="0" y="0" width="267" height="267" filterUnits="userSpaceOnUse">
+      <feOffset dy="3" input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="3" result="blur"/>
+      <feFlood flood-opacity="0.161"/>
+      <feComposite operator="in" in2="blur"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+  </defs>
+  <g transform="matrix(1, 0, 0, 1, 0, 0)" filter="url(#Green_Circle_for_Dashboard)">
+    <g id="Green_Circle_for_Dashboard-2" data-name="Green Circle for Dashboard" transform="translate(9 6)" fill="none" stroke="#2bcd95" stroke-width="20">
+      <circle cx="124.5" cy="124.5" r="124.5" stroke="none"/>
+      <circle cx="124.5" cy="124.5" r="114.5" fill="none"/>
+    </g>
+  </g>
+</svg>

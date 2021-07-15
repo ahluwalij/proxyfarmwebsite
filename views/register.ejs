@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Poppins:100i,200,300,400,500,700,700i&display=swap"
+      rel="stylesheet"
+    />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" href="register.css" />
+    <title>Register Arrow Proxies Dashboard</title>
+  </head>
+
+  <body>
+    <nav>
+      <div class="brand">
+        <img src="./Asset 1.png" alt="" class="logo" />
+        <p class="arrowtxt">Register</p>
+      </div>
+      <div class="links">
+        <a href="https://arrowproxies.com/">Home</a>
+        <a href="/">Login</a>
+        <a href="#" class="active1">Register</a>
+        <a href="https://discord.gg/E8v5bYD">Discord</a>
+      </div>
+      <p class="user">
+        <span class="username"></span><span><a href="#" class="out"></a></span>
+      </p>
+    </nav>
+
+    <div class="change">
+      <div class="chngcontainer">
+        <h4>Register An Account</h4>
+        <div class="flex spcbtwn">
+          <p class="small">
+            Already Have An Account? <a href="/" class="green"> Login</a>
+          </p>
+        </div>
+        <% if(error) {%>
+        <p
+          class="out"
+          style="font-size: 12px; text-align: center; font-weight: 400;"
+        >
+          <%= error %>
+        </p>
+        <% } %>
+        <form action="register" method="POST">
+          <h5>Email</h5>
+          <div>
+            <input
+              type="email"
+              name="email"
+              id="pass"
+              placeholder="Enter Email"
+            />
+          </div>
+          <h5>Password</h5>
+          <div>
+            <input
+              type="password"
+              name="password"
+              id="pass"
+              placeholder="Enter Password"
+            />
+          </div>
+          <h5>Confirm Password</h5>
+          <div>
+            <input
+              type="password"
+              name="confirm"
+              id="pass"
+              placeholder="Enter Password Again"
+            />
+          </div>
+          <div
+            style="
+              display: flex;
+              align-items: center;
+              margin-top: 5px;
+              margin-bottom: 5px;
+            "
+          >
+            <input type="checkbox" name="tos" />
+            <p style="font-size: 12px; margin-left: 5px;">
+              I accept the
+              <a
+                href="https://arrowproxies.gitbook.io/arrow-proxies/terms-and-conditions"
+                style="color: #2af6b2;"
+                >terms and conditons.</a
+              >
+            </p>
+          </div>
+          <div><input type="submit" value="Register" class="submit" /></div>
+        </form>
+      </div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,1 @@
+{"options":{},"indexes":[{"v":2,"key":{"_id":1},"name":"_id_","ns":"arrowaioprod.discounts"},{"v":2,"unique":true,"key":{"code":1},"name":"code_1","ns":"arrowaioprod.discounts","background":true}],"uuid":"9609a502221c4f338d21ba6cd5484590"}

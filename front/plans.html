@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Admin Panel</title>
+
+    <!-- Compiled and minified CSS -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+    <link
+      href="https://unpkg.com/tabulator-tables@4.5.3/dist/css/tabulator.min.css"
+      rel="stylesheet"
+    />
+    <script
+      type="text/javascript"
+      src="https://unpkg.com/tabulator-tables@4.5.3/dist/js/tabulator.min.js"
+    ></script>
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+  </head>
+  <body class="black">
+    <nav>
+      <div class="nav-wrapper black lighten-1">
+        <a href="#!" class="brand-logo">
+          <img
+            src="https://arrowproxies.com/Images/2x/Asset%201@2x.png"
+            style="height:50px; width: 50px; margin:10px;"
+          />
+        </a>
+        <ul class="right hide-on-med-and-down">
+          <li>
+            <a href="plans"><i class="material-icons">layers</i></a>
+          </li>
+          <li>
+            <a href="users"><i class="material-icons">account_circle</i></a>
+          </li>
+          <li>
+            <a href="server"><i class="material-icons">cloud</i></a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+    <div class="container">
+      <h1 class="white-text">Plans</h1>
+      <h4 class="white-text">Vaccant Proxies : 2500</h4>
+      <h4 class="white-text">Stock Allocated : 1450</h4>
+      <h3 class="white-text">Public Plans</h3>
+      <div id="example-table"></div>
+      <h3 class="white-text">Custom Plans </button></h3> 
+      <a class="waves-effect waves-light btn">New Custom Plan</a>
+      <br>
+      <br>
+      <div id="custom"></div>
+    </div>
+  </body>
+  <script>
+    var tabledata = [
+      { id: 1, name: "Oli Bob", age: "12", col: "red" },
+      { id: 2, name: "Mary May", age: "1", col: "blue" },
+      {
+        id: 3,
+        name: "Christine Lobowski",
+        age: "42",
+        col: "green"
+      },
+      {
+        id: 4,
+        name: "Brendon Philips",
+        age: "125",
+        col: "orange"
+      },
+      {
+        id: 5,
+        name: "Margret Marmajuke",
+        age: "16",
+        col: "yellow"
+      }
+    ];
+
+    var table = new Tabulator("#example-table", {
+      height: 150, // set height of table (in CSS or here), this enables the Virtual DOM and improves render speed dramatically (can be any valid css height value)
+      data: tabledata, //assign data to table
+      layout: "fitColumns", //fit columns to width of table (optional)
+      columns: [
+        //Define Table Columns
+        { title: "Id", field: "_id", width: 150 },
+        { title: "Plan Name", field: "proxyQuantity", width: 150 },
+        { title: "Plan Price", field: "planPrice" },
+        { title: "Stock Specified", field: "stock" }
+      ],
+      rowClick: function(e, row) {
+        alert("Row " + row.getData().id + " Clicked!!!!");
+      }
+    });
+    //Custom table here
+
+    var customdata = [
+      { id: 1, name: "Oli Bob", age: "12", col: "red" },
+      { id: 2, name: "Mary May", age: "1", col: "blue" },
+      {
+        id: 3,
+        name: "Christine Lobowski",
+        age: "42",
+        col: "green"
+      },
+      {
+        id: 4,
+        name: "Brendon Philips",
+        age: "125",
+        col: "orange"
+      },
+      {
+        id: 5,
+        name: "Margret Marmajuke",
+        age: "16",
+        col: "yellow"
+      }
+    ];
+
+    var table2 = new Tabulator("#custom", {
+      height: 250, // set height of table (in CSS or here), this enables the Virtual DOM and improves render speed dramatically (can be any valid css height value)
+      data: tabledata, //assign data to table
+      layout: "fitColumns", //fit columns to width of table (optional)
+      columns: [
+        //Define Table Columns
+        { title: "Id", field: "_id", width: 150 },
+        { title: "Plan Name", field: "proxyQuantity", width: 150 },
+        { title: "Plan Price", field: "planPrice" },
+        { title: "Stock Specified", field: "stock" }
+      ],
+      rowClick: function(e, row) {
+        alert("Row " + row.getData().id + " Clicked!!!!");
+      }
+    });
+  </script>
+</html>

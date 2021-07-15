@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Admin Panel</title>
+
+    <!-- Compiled and minified CSS -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./styles/admin.css" />
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+  </head>
+  <body class="black">
+    <nav>
+      <div class="nav-wrapper black lighten-1">
+        <a href="#!" class="brand-logo">
+          <img
+            src="https://arrowproxies.com/Images/2x/Asset%201@2x.png"
+            style="height:50px; width: 50px; margin:10px;"
+          />
+        </a>
+        <ul class="right hide-on-med-and-down">
+          <li>
+            <a href="sass.html"><i class="material-icons">layers</i></a>
+          </li>
+          <li>
+            <a href="badges.html"
+              ><i class="material-icons">account_circle</i></a
+            >
+          </li>
+          <li>
+            <a href="collapsible.html"><i class="material-icons">cloud</i></a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+    <div class="container">
+      <h1 class="white-text">Servers</h1>
+      <div class="row">
+        <div class="col l4 s6 m6">
+          <div class="card blue-grey darken-1">
+            <div class="card-content teal darken-3 white-text">
+              <span class="card-title">Server A</span>
+              <p>
+                <b>Total IPS</b> 2000 <br />
+                <b>Vaccant IPS</b> 500 <br />
+                <b>Used IPS </b> 30
+              </p>
+            </div>
+            <div class="card-action teal darken-3">
+              <a href="#">Upate Server</a>
+              <a href="#">Delete Server</a>
+            </div>
+          </div>
+        </div>
+        <div class="col l4 s6 m6">
+          <div class="card blue-grey darken-1">
+            <div class="card-content teal darken-3 white-text">
+              <span class="card-title">Server B</span>
+              <p>
+                <b>Total IPS</b> 2000 <br />
+                <b>Vaccant IPS</b> 500 <br />
+                <b>Used IPS </b> 30
+              </p>
+            </div>
+            <div class="card-action teal darken-3">
+              <a href="#">Upate Server</a>
+              <a href="#">Delete Server</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <h4 class="white-text">Add Server</h4>
+      <div class="row white-text">
+        <form class="col s12" action="/admin/server"  method="POST">
+          <div class="row">
+            <div class="input-field col s6">
+              <input
+                placeholder="Server A"
+                id="first_name"
+                type="text"
+                name="alias"
+                class="white-text"
+              />
+              <label for="first_name">Alias</label>
+            </div>
+            <div class="input-field col s6">
+              <input
+                placeholder="SSADJJQWODIQJDOIQWJD"
+                name="authToken"
+                id="first_name"
+                type="text"
+                class="white-text"
+              />
+              <label for="first_name">Auth Token</label>
+            </div>
+            <div class="input-field col s6">
+              <input
+                placeholder="http://ip:port"
+                id="first_name"
+                name="controller"
+                type="text"
+                class="white-text"
+              />
+              <label for="first_name">Controller</label>
+            </div>
+            <div class="input-field col s6">
+              <input
+                placeholder="3128"
+                id="first_name"
+                name="port"
+                type="text"
+                class="white-text"
+              />
+              <label for="first_name">Port</label>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="input-field col s12">
+              <textarea
+                id="textarea1"
+                class="materialize-textarea white-text"
+              ></textarea>
+              <label for="textarea1">IPs</label>
+            </div>
+          </div>
+
+          <input
+            class="btn waves-effect waves-light"
+            type="submit"
+            name="action"
+          >
+            Add Server
+            <i class="material-icons right">send</i>
+        </input>
+        </form>
+      </div>
+    </div>
+  </body>
+</html>

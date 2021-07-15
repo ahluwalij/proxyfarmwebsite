@@ -1,0 +1,25 @@
+{
+  "files": {
+    "main.css": "/store/static/css/main.83dbcffa.chunk.css",
+    "main.js": "/store/static/js/main.907aa9c4.chunk.js",
+    "main.js.map": "/store/static/js/main.907aa9c4.chunk.js.map",
+    "runtime-main.js": "/store/static/js/runtime-main.4023f298.js",
+    "runtime-main.js.map": "/store/static/js/runtime-main.4023f298.js.map",
+    "static/js/2.33a5a593.chunk.js": "/store/static/js/2.33a5a593.chunk.js",
+    "static/js/2.33a5a593.chunk.js.map": "/store/static/js/2.33a5a593.chunk.js.map",
+    "index.html": "/store/index.html",
+    "precache-manifest.587858f758abbb4a375ccc04bd288da4.js": "/store/precache-manifest.587858f758abbb4a375ccc04bd288da4.js",
+    "service-worker.js": "/store/service-worker.js",
+    "static/css/main.83dbcffa.chunk.css.map": "/store/static/css/main.83dbcffa.chunk.css.map",
+    "static/js/2.33a5a593.chunk.js.LICENSE.txt": "/store/static/js/2.33a5a593.chunk.js.LICENSE.txt",
+    "static/media/Arrow_PNG.png": "/store/static/media/Arrow_PNG.a222d6b8.png",
+    "static/media/Discord-Logo-White(3).svg": "/store/static/media/Discord-Logo-White(3).337e3314.svg",
+    "static/media/newstyle.css": "/store/static/media/whitneysemibold.fa773e91.woff"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.4023f298.js",
+    "static/js/2.33a5a593.chunk.js",
+    "static/css/main.83dbcffa.chunk.css",
+    "static/js/main.907aa9c4.chunk.js"
+  ]
+}

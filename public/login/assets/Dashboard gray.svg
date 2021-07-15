@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="104" height="41" viewBox="0 0 104 41">
+  <g id="Dashboard_gray" data-name="Dashboard gray" transform="translate(-1574 -148)">
+    <path id="Path_1354" data-name="Path 1354" d="M9,0H95a9,9,0,0,1,9,9V32a9,9,0,0,1-9,9H9a9,9,0,0,1-9-9V9A9,9,0,0,1,9,0Z" transform="translate(1574 148)" fill="#7b7b7b"/>
+    <text id="Dashboard" transform="translate(1592 174)" fill="#fff" font-size="15" font-family="Whitney-Bold, Whitney" font-weight="700"><tspan x="0" y="0">Dashboard</tspan></text>
+  </g>
+</svg>

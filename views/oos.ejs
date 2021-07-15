@@ -1,0 +1,233 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Poppins:100i,200,300,400,500,700,700i&display=swap"
+      rel="stylesheet"
+    />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" href="https://arrowproxies.com/style.css" />
+    <link rel="stylesheet" href="purchase-new.css" />
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+    <title>Purchase Arrow Proxies</title>
+    <style>
+      .sale {
+        cursor: pointer !important;
+
+        font: 600 13.3333px Arial;
+      }
+      .card2 {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        align-items: center;
+        background-color: #121212;
+        width: 15rem;
+        height: 26rem;
+        border-radius: 20px;
+      }
+
+      .cards {
+        color: white;
+      }
+    </style>
+  </head>
+
+  <body>
+    <nav>
+      <div class="brand">
+        <img src="./Asset 1.png" alt="" class="logo" />
+        <p class="arrowtxt">Purchase</p>
+      </div>
+      <div class="links">
+        <a href="https://arrowproxies.com/">Home</a>
+        <a href="/">Dashboard</a>
+        <a href="#" class="active1">Purchase</a>
+      </div>
+      <p class="user">
+        <span class="username"></span><span><a href="#" class="out"></a></span>
+      </p>
+    </nav>
+
+    <div class="tabs">
+      <button
+        id="Daily"
+        type="button"
+        class="btn ant active"
+        onclick='changeTab("Daily")'
+      >
+        Daily
+      </button>
+      <button
+        id="Monthly"
+        type="button"
+        class="btn ant inactive"
+        onclick='changeTab("Monthly")'
+      >
+        Monthly
+      </button>
+    </div>
+    <div class="page-content">
+      <div class="grid" id="kml">
+        <!-- <div class="card2">
+          <div class="pro">
+            <img src="./images/1x/Asset 1.png" alt="" class="proxyarr" />
+            <p class="proxy">50 Proxies</p>
+          </div>
+          <h4>BASIC</h4>
+          <h6 class="mid">Unlimited Data</h6>
+          <h6 class="mid">Instant Delivery</h6>
+          <h6 class="mid">$105 Monthly</h6>
+          
+          <button type="button" class="btn">Out of Stock</button>
+          
+        </div>
+        <div class="card2">
+          <div class="pro">
+            <img src="./images/1x/Asset 1.png" alt="" class="proxyarr" />
+            <p class="proxy">100 Proxies</p>
+          </div>
+          <h4>ADVANCED</h4>
+          <h6 class="mid">Unlimited Data</h6>
+          <h6 class="mid">Instant Delivery</h6>
+          <h6 class="mid">$195 Monthly</h6>
+          
+          <button type="button" class="btn">Out of Stock</button>
+          
+        </div>
+        <div class="card2">
+          <div class="pro">
+            <img src="./images/1x/Asset 1.png" alt="" class="proxyarr" />
+            <p class="proxy">150 Proxies</p>
+          </div>
+          <h4>PRO</h4>
+          <h6 class="mid">Unlimited Data</h6>
+          <h6 class="mid">Instant Delivery</h6>
+          <h6 class="mid">$270 Monthly</h6>
+          
+          <button type="button" class="btn">Out of Stock</button>
+          
+        </div>
+
+        <div class="card2">
+          <div class="pro">
+            <img src="./images/1x/Asset 1.png" alt="" class="proxyarr" />
+            <p class="proxy">50 Proxies</p>
+          </div>
+          <h4>BASIC+</h4>
+          <h6 class="mid">Unlimited Data</h6>
+          <h6 class="mid">Instant Delivery</h6>
+          <h6 class="mid">$115 Monthly</h6>
+          
+          <button type="button" class="btn">Out of Stock</button>
+          
+        </div>
+        <div class="card2">
+          <div class="pro">
+            <img src="./images/1x/Asset 1.png" alt="" class="proxyarr" />
+            <p class="proxy">100 Proxies</p>
+          </div>
+          <h4>ADVANCED+</h4>
+          <h6 class="mid">Unlimited Data</h6>
+          <h6 class="mid">Instant Delivery</h6>
+          <h6 class="mid">$210 Monthly</h6>
+          
+          <button type="button" class="btn">Out of Stock</button>
+          
+        </div>
+        <div class="card2">
+          <div class="pro">
+            <img src="./images/1x/Asset 1.png" alt="" class="proxyarr" />
+            <p class="proxy">150 Proxies</p>
+          </div>
+          <h4>PRO+</h4>
+          <h6 class="mid">Unlimited Data</h6>
+          <h6 class="mid">Instant Delivery</h6>
+          <h6 class="mid">$285 Monthly</h6>
+          
+          <button type="button" class="btn">Out of Stock</button>
+          
+        </div>
+        <div class="card2">
+          <div class="pro">
+            <img src="./images/1x/Asset 1.png" alt="" class="proxyarr" />
+            <p class="proxy">100 Proxies</p>
+          </div>
+          <h4>ADVANCED+</h4>
+          <h6 class="mid">Unlimited Data</h6>
+          <h6 class="mid">Instant Delivery</h6>
+          <h6 class="mid">$210 Monthly</h6>
+          
+          <button type="button" class="btn">Out of Stock</button>
+          
+        </div>
+        <div class="card2">
+          <div class="pro">
+            <img src="./images/1x/Asset 1.png" alt="" class="proxyarr" />
+            <p class="proxy">150 Proxies</p>
+          </div>
+          <h4>PRO+</h4>
+          <h6 class="mid">Unlimited Data</h6>
+          <h6 class="mid">Instant Delivery</h6>
+          <h6 class="mid">$285 Monthly</h6>
+          
+          <button type="button" class="btn">Out of Stock</button>
+          
+        </div> -->
+      </div>
+    </div>
+  </body>
+  <script src="https://cdn.jsdelivr.net/npm/lodash@4.17.15/lodash.min.js"></script>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    AOS.init();
+    const aps = _.sortBy([{"planDuration":30,"serverType":0,"enabled":true,"public":true,"stock":0,"_id":"5e5eef267d631d2616429793","planName":"Basic Verizon","proxyQuantity":50,"planPrice":113,"__v":0},{"planDuration":30,"serverType":0,"enabled":true,"public":true,"stock":0,"_id":"5e5eef5384c6e5263ba4f987","planName":"Pro Verizon","proxyQuantity":150,"planPrice":293,"__v":0},{"planDuration":30,"serverType":0,"enabled":true,"public":true,"stock":0,"_id":"5e5eef84a1eb9726714e8a12","planName":"Advanced Verizon","proxyQuantity":100,"planPrice":210,"__v":0},{"planDuration":30,"serverType":1,"enabled":true,"public":true,"stock":0,"_id":"5e6d329cc4698d5f685043df","planName":"Basic Comcast","proxyQuantity":50,"planPrice":130,"__v":0},{"planDuration":30,"serverType":1,"enabled":true,"public":true,"stock":0,"_id":"5e6d329dc4698d5f685043e0","planName":"Pro Comcast","proxyQuantity":150,"planPrice":315,"__v":0},{"planDuration":30,"serverType":1,"enabled":true,"public":true,"stock":0,"_id":"5e6d329fc4698d5f685043e1","planName":"Advanced Comcast","proxyQuantity":100,"planPrice":240,"__v":0},{"planDuration":30,"serverType":0,"enabled":true,"public":true,"stock":0,"_id":"5e810001dfaabc53f99c61ec","planName":"Small Verizon","proxyQuantity":25,"planPrice":59,"__v":0},{"planDuration":30,"serverType":1,"enabled":true,"public":true,"stock":0,"_id":"5e812cf6dfaabc53f99c61ed","planName":"Small Comcast","proxyQuantity":25,"planPrice":68,"__v":0},{"planDuration":1,"serverType":0,"enabled":true,"public":true,"stock":0,"_id":"5e82ad10cdfae355e4a5ab90","planName":"Basic Verizon Daily","proxyQuantity":50,"planPrice":57,"__v":0},{"planDuration":1,"serverType":0,"enabled":true,"public":true,"stock":0,"_id":"5e82ad48cdfae355e4a5ab91","planName":"Pro Verizon Daily","proxyQuantity":150,"planPrice":143,"__v":0},{"planDuration":1,"serverType":0,"enabled":true,"public":true,"stock":0,"_id":"5e82ad60cdfae355e4a5ab92","planName":"Advanced Verizon Daily","proxyQuantity":100,"planPrice":105,"__v":0},{"planDuration":1,"serverType":1,"enabled":true,"public":true,"stock":0,"_id":"5e82adcccdfae355e4a5ab93","planName":"Basic Comcast Daily","proxyQuantity":50,"planPrice":67,"__v":0},{"planDuration":1,"serverType":1,"enabled":true,"public":true,"stock":0,"_id":"5e82ade2cdfae355e4a5ab94","planName":"Pro Comcast Daily","proxyQuantity":150,"planPrice":150,"__v":0},{"planDuration":1,"serverType":1,"enabled":true,"public":true,"stock":0,"_id":"5e82adf5cdfae355e4a5ab95","planName":"Advanced Comcast Daily","proxyQuantity":100,"planPrice":115,"__v":0},{"planDuration":1,"serverType":0,"enabled":true,"public":true,"stock":0,"_id":"5e82ae53cdfae355e4a5ab96","planName":"Small Verizon Daily","proxyQuantity":25,"planPrice":30,"__v":0},{"planDuration":1,"serverType":1,"enabled":true,"public":true,"stock":0,"_id":"5e82ae6acdfae355e4a5ab97","planName":"Small Comcast Daily","proxyQuantity":25,"planPrice":1,"__v":0},{"planDuration":30,"serverType":3,"enabled":true,"public":true,"stock":0,"_id":"5ea47895842bee2ef56b7330","planName":"Small Captcha","proxyQuantity":5,"planPrice":8,"__v":0},{"planDuration":30,"serverType":3,"enabled":true,"public":true,"stock":0,"_id":"5ea47898842bee2ef56b7331","planName":"Basic Captcha","proxyQuantity":10,"planPrice":13,"__v":0},{"planDuration":30,"serverType":3,"enabled":true,"public":true,"stock":0,"_id":"5ea47899842bee2ef56b7332","planName":"Advanced Captcha","proxyQuantity":25,"planPrice":30,"__v":0},{"planDuration":30,"serverType":3,"enabled":true,"public":true,"stock":0,"_id":"5ecac81e9570a0059918526b","planName":"Pro Captcha","proxyQuantity":50,"planPrice":50,"__v":0}], ["serverType","proxyQuantity" ]);
+
+    const plans = {
+      "Daily" : _.filter(aps, {planDuration: 1}),
+      "Monthly":_.filter(aps, {planDuration: 30}),
+    };
+
+    function generateCard({ _id, planName, proxyQuantity, stock, planPrice }) {
+      return `<div data-aos="zoom-in-up" class="card2">
+          <div class="pro">
+            <img src="./images/1x/Asset 1.png" alt="" class="proxyarr" />
+            <p class="proxy">${proxyQuantity} Proxies</p>
+          </div>
+          <h4>${planName}</h4>
+          <h6 class="mid">Unlimited Data</h6>
+          <h6 class="mid">Instant Delivery</h6>
+          <h6 class="mid">$${planPrice} ${selected}</h6>
+         ${stock ? `<a class="sale btn" href="/buy/${_id}"
+            >Purchase Now</a>`:
+            `<button type="button" class="btn">Out of Stock</button>`
+          }
+        </div>`;
+    }
+
+    function createCards(term) {
+      let k = new Array(plans[term].length)
+        .fill(0)
+        .map((k,i) => generateCard(plans[term][i]))
+        .join("");
+      document.getElementById("kml").innerHTML = k;
+    }
+
+    let selected = "Daily";
+    function changeTab(to) {
+      const tab = document.getElementById(to);
+      const selectedTab = document.getElementById(selected);
+      selectedTab.classList.remove("active");
+      selectedTab.classList.add("inactive");
+      tab.classList.remove("inactive");
+      tab.classList.add("active");
+      selected = to;
+      createCards(to);
+    }
+
+    createCards("Daily");
+  </script>
+</html>

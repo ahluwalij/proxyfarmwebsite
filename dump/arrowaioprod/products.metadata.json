@@ -1,0 +1,1 @@
+{"options":{},"indexes":[{"v":2,"key":{"_id":1},"name":"_id_","ns":"arrowaioprod.products"},{"v":2,"unique":true,"key":{"planName":1},"name":"planName_1","ns":"arrowaioprod.products","background":true},{"v":2,"key":{"public":1},"name":"public_1","ns":"arrowaioprod.products","background":true}],"uuid":"7dd332b7cd414de89e9fd55e133035c5"}

@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    
+    
+    <script src="https://js.stripe.com/v3/"></script>
+    <script src="/script2.js" defer></script>
+    <link rel="stylesheet" href="/css/global.css" />
+    <link rel="stylesheet" href="/assets/bootstrap.css">
+    <link rel="stylesheet" href="/assets/style.css" />
+    <title>Buy Arrow Proxies</title>
+    <style>
+      body{
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+      }
+    </style>
+  </head>
+  <body>
+    <style>
+      .ElementsApp, .ElementsApp .InputElement {
+        font-size: 20px !important;
+      }
+    </style>
+    <canvas id="canvas1"> </canvas>
+    <div class="postloginnav">
+      <div class="navgrid">
+      <div class="userdetails">
+          <div class="username bold"><%= user.discordUsername %></div>
+        <div class="logout" onclick="window.location='/logout'"><img src="/assets/Logout.svg" alt=""></div>
+        
+      </div>
+      <div class="navlinks">
+        <a href="/purchase" class="navactive ">Purchase</a>
+        <a href="https://dash.arrowproxies.com/store" class="">Store</a>
+        <!-- <a href="#" class="bold">Profile</a> -->
+        <a href="/" class="">Dashboard</a>
+      </div>  
+      </div>
+      <div class="userimg">
+        <img src="<%= user.discordImage %>" alt="">
+      </div>
+    </div>
+    <div class="container">
+      <div class="loginwrapper">
+        <div class="loginsection">
+          <div class="logintext bold">
+            Renewal
+          </div>
+          <div class="smtext">PLEASE RENEW BELOW.</div>
+  
+          <div class="row flex-nowrap mb-lg-5">
+            <div class="contents col-md-4">
+              <img class="shop" src="/assets/purchase.svg" alt="">
+  
+              <div class="productscontainer">
+              <div class="products">
+                <div class="productname bold">
+                  1x <%= name %> Proxies
+                </div>
+               
+              </div>
+
+
+            </div>
+
+            <div class="amount">
+              <div class="subtotal">Subtotal:  <span>$<%= price %></span></div>
+
+              <div class="tax">Discount: <span id="total-discount"> -$<%= (discount) * price %></span></div>
+              
+              <div class="total bold">Total: <span id="total-price">$<%= price - (discount) * price %></span></div>
+            </div>
+            </div>
+  
+           
+             
+            
+            <div class="customerdetails col-md-8">
+              <form id="payment-form" class="" style="width: 100%;">
+               
+             
+              <div class="mb-3 item">
+                <label for="address" class="bold">Discount Applied</label>
+                <label for="address" class="bold"><%= discount * 100 %>%</label>
+               <p>The same discount you used to checkout carries over for your renewal</p>
+              </div>
+              <div class="sr-field-error" id="card-errors" role="alert"></div>
+              <label for="address" class="bold" style="margin-bottom: 1rem;">Card Details</label>
+              <div class="sr-combo-inputs-row" style="margin-bottom: 2rem;">
+                <div class="sr-input sr-card-element" id="card-element"></div>
+              </div>
+              <button id="submit" class="paybtn bold">
+                <div class="spinner hidden" id="spinner"></div>
+                <span id="button-text">PAY $<%= price - (discount) * price %></span><span id="order-amount"></span>
+              </button>
+  <!-- <button class="paybtn bold">PAY $77.54</button> -->
+              </form>            
+            </div>
+          
+        
+            </div>
+          </div>
+        </div>
+      </div>
+      </div>
+    <footer>
+      <div class="footercontainer">
+        <div class="secone">
+          <img src="/assets/Arrow_PNG.png" alt="" />
+          <p class="light">ARROW PROXIES</p>
+        </div>
+
+        <div class="sectwo">
+          <a href="#"><div class="footerheader">Menu</div></a>
+          <a href="#"> <div class="footerlinks">Home</div></a>
+          <a href="#"> <div class="footerlinks">Features</div></a>
+          <a href="#"> <div class="footerlinks">Purchase</div></a>
+          <a href="#"> <div class="footerlinks">FAQ</div></a>
+        </div>
+
+        <div class="secthree">
+          <a href="#"> <div class="footerheader">Resources</div></a>
+          <a href="#"> <div class="footerlinks">Terms of Policy</div></a>
+          <a href="#"> <div class="footerlinks">Privacy Policy</div></a>
+        </div>
+
+        <div class="secfour">
+          <a href="#"> <div class="footerheader">Get In Touch</div></a>
+          <a href="#"><div class="footerlinks">arrowproxies@gmail.com</div></a>
+        </div>
+
+        <div class="secfive">
+          <a href="#"> <img src="/assets/Footer twitter.svg" alt="" /></a>
+          <a href="#"><img src="/assets/Footer instagram.svg" alt="" /></a>
+          <a href="#"> <img src="/assets/Footer discord.svg" alt="" /></a>
+        </div>
+    </footer>
+    <script src="/assets/js/bg.js"></script>
+  </body>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script> 
+  <script src="//geodata.solutions/includes/countrystatecity.js"></script>  
+  <script>
+    var orderData = {
+      items: ["<%= item %>"],
+      currency: "usd"
+    };
+
+    var price = <%= price %>;
+  </script>
+  
+</html>

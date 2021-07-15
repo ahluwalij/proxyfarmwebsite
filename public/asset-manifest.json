@@ -1,0 +1,31 @@
+{
+  "files": {
+    "main.css": "/static/css/main.41112dbd.chunk.css",
+    "main.js": "/static/js/main.b28cbf07.chunk.js",
+    "main.js.map": "/static/js/main.b28cbf07.chunk.js.map",
+    "runtime-main.js": "/static/js/runtime-main.a3c66075.js",
+    "runtime-main.js.map": "/static/js/runtime-main.a3c66075.js.map",
+    "static/js/2.f777ad5b.chunk.js": "/static/js/2.f777ad5b.chunk.js",
+    "static/js/2.f777ad5b.chunk.js.map": "/static/js/2.f777ad5b.chunk.js.map",
+    "index.html": "/index.html",
+    "precache-manifest.d64959ab1d597bb6ddb3293a00707e59.js": "/precache-manifest.d64959ab1d597bb6ddb3293a00707e59.js",
+    "service-worker.js": "/service-worker.js",
+    "static/css/main.41112dbd.chunk.css.map": "/static/css/main.41112dbd.chunk.css.map",
+    "static/js/2.f777ad5b.chunk.js.LICENSE.txt": "/static/js/2.f777ad5b.chunk.js.LICENSE.txt",
+    "static/media/Arrow_PNG.png": "/static/media/Arrow_PNG.a222d6b8.png",
+    "static/media/CSV.svg": "/static/media/CSV.b8345ff4.svg",
+    "static/media/Footer discord.svg": "/static/media/Footer discord.0194cf6c.svg",
+    "static/media/Footer instagram.svg": "/static/media/Footer instagram.376ac978.svg",
+    "static/media/Footer twitter.svg": "/static/media/Footer twitter.d397ffe8.svg",
+    "static/media/Logout.svg": "/static/media/Logout.89598ff1.svg",
+    "static/media/purchase.svg": "/static/media/purchase.c6847b0f.svg",
+    "static/media/radio.svg": "/static/media/radio.09e1606f.svg",
+    "static/media/userimg.svg": "/static/media/userimg.6258b9e9.svg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.a3c66075.js",
+    "static/js/2.f777ad5b.chunk.js",
+    "static/css/main.41112dbd.chunk.css",
+    "static/js/main.b28cbf07.chunk.js"
+  ]
+}

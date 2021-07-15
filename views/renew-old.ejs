@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Poppins:100i,200,300,400,500,700,700i&display=swap"
+      rel="stylesheet"
+    />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" href="/login.css" />
+    <link rel="stylesheet" href="/css/normalize.css" />
+    <link rel="stylesheet" href="/css/global.css" />
+    <script src="https://js.stripe.com/v3/"></script>
+    <script src="/script2.js" defer></script>
+    <title>Buy Arrow proxies</title>
+  </head>
+
+  <body>
+    <nav>
+      <div class="brand">
+        <img src="/Asset 1.png" alt="" class="logo" />
+        <p class="arrowtxt">Purchase</p>
+      </div>
+      <div class="links">
+        <a href="https://arrowproxies.com/">Home</a>
+        <a href="/">Dashboard</a>
+        <a href="#" class="active1">Purchase Proxy</a>
+      </div>
+      <p class="user">
+        <span class="username"></span><span><a href="#" class="out"></a></span>
+      </p>
+    </nav>
+    <style>
+      .p-info {
+        color: #000000;
+        font-size: 14px;
+        margin-top: 10px;
+      }
+      .info-block {
+        margin-bottom: 20px;
+      }
+    </style>
+
+    <div class="change">
+      <div class="sr-main">
+        <form id="payment-form" class="sr-payment-form">
+          <center><img src="/Asset 1.png" id="logo" /> <br /></center>
+          <div class="info-block">
+            <p class="p-info">Plan Name: <b><%= name %></b></p>
+            <p class="p-info">Plan Price: <b>$<%= price %></b></p>
+            <p class="p-info">Discount: <b><%= discount * 100 %>%</b></p>
+            <p class="p-info">
+              Payable Amount: <b>$<%= price - (discount) * price %></b>
+            </p>
+          </div>
+
+          <div class="sr-combo-inputs-row">
+            <div class="sr-input sr-card-element" id="card-element"></div>
+          </div>
+
+          <div class="sr-field-error" id="card-errors" role="alert"></div>
+          <button id="submit">
+            <div class="spinner hidden" id="spinner"></div>
+            <span id="button-text">Pay</span><span id="order-amount"></span>
+          </button>
+        </form>
+        <div class="sr-result hidden">
+          <br />
+          <br />
+          <h1 style="color: black;">Congratulations</h1>
+          <h5 style="color: black;">
+            You're plan was renewed! Check your dashboard and continue using the
+            best proxies in the game right away!
+          </h5>
+          <br />
+        </div>
+      </div>
+    </div>
+  </body>
+  <script>
+    var orderData = {
+      items: ["<%= item %>"],
+      currency: "usd",
+    };
+  </script>
+</html>

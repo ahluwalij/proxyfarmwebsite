@@ -1,0 +1,1 @@
+{"options":{},"indexes":[{"v":2,"key":{"_id":1},"name":"_id_","ns":"arrowaio2.users"},{"v":2,"unique":true,"key":{"email":1},"name":"email_1","ns":"arrowaio2.users","background":true}],"uuid":"3785965f5ec648e29996ad60cd0e5ac5"}

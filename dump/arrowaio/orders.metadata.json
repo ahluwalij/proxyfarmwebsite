@@ -1,0 +1,1 @@
+{"options":{},"indexes":[{"v":2,"key":{"_id":1},"name":"_id_","ns":"arrowaio.orders"},{"v":2,"key":{"userId":1},"name":"userId_1","ns":"arrowaio.orders","background":true},{"v":2,"key":{"fulfilled":1},"name":"fulfilled_1","ns":"arrowaio.orders","background":true}],"uuid":"000d9bb61cb442438701f79b08c7ed34"}

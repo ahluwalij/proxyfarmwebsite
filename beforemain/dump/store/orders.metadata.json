@@ -1,0 +1,1 @@
+{"options":{},"indexes":[{"v":2,"key":{"_id":1},"name":"_id_","ns":"store.orders"},{"v":2,"unique":true,"key":{"paymentIntent":1},"name":"paymentIntent_1","ns":"store.orders","background":true}],"uuid":"5fd8fded741240bb95ee881f9460c758"}
