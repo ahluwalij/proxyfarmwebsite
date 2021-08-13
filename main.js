@@ -42,8 +42,8 @@ passport.use(
     {
       authorizationURL: "https://discord.com/api/oauth2/authorize",
       tokenURL: "https://discord.com/api/oauth2/token",
-      clientID: "827569848086822924",
-      clientSecret: "0m0uhQRKPjmnrIWv1Y2TUanTwGKKEeh1",
+      clientID: "818995376090382386",
+      clientSecret: "5IIq11Vrw6ILQQ5ygNhCv7TMb4oYYAFZ",
       callbackURL: process.env.CALLBACK,
     },
     async function (accessToken, refreshToken, profile, cb) {
@@ -105,6 +105,26 @@ const allocationAlgorithm = require("./api/procedures/allocate");
 
 const Discounts = require("./models/Discounts");
 const Orders = require("./models/Orders");
+
+/*
+  LEGAL PAGES
+ */
+
+app.get("/tos", (req, res) => {
+  res.render("terms");
+});
+
+app.get("/refund", (req, res) => {
+  res.render("refund");
+});
+
+app.get("/privacy", (req, res) => {
+  res.render("privacy");
+});
+
+/*
+  END LEGAL 
+*/
 
 app.get("/", async (req, res) => {
   console.log(req.user);

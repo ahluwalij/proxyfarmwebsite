@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="stylesheet" href="./style.css" />
+    <title>ProxyFarm - Buy | Terms of Service</title>
+    <link rel="icon" href="/logo.png" type="image/png" sizes="16x16" />
+  </head>
+  <body>
+    <div class="scrollside none">
+      <div class="sidebar">
+        <img
+          class="logoimg"
+          src="/logo.png"
+          alt=""
+          onclick="window.location = '/'"
+        />
+        <div class="links">
+          <a href="./tos">TERMS OF SERVICE</a>
+          <a href="./privacy">PRIVACY POLICY</a>
+          <a href="./refund">REFUND POLICY</a>
+        </div>
+        <div class="socials">
+          <div class="mail">
+            <img src="./assets/mail.svg" />
+          </div>
+          <div class="twitter">
+            <img src="./assets/twitter.svg" />
+          </div>
+          <div class="tos">
+            <img
+              src="https://img.icons8.com/material-rounded/96/ffffff/terms-and-conditions.png"
+            />
+          </div>
+        </div>
+        <div class="close">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="36"
+            height="36"
+            viewBox="0 0 18 18"
+          >
+            <path
+              fill="#fff"
+              d="M14.53 4.53l-1.06-1.06L9 7.94 4.53 3.47 3.47 4.53 7.94 9l-4.47 4.47 1.06 1.06L9 10.06l4.47 4.47 1.06-1.06L10.06 9z"
+            />
+          </svg>
+        </div>
+      </div>
+    </div>
+    <div class="container">
+      <div class="sidebarcontainer">
+        <div class="sidebar">
+          <img
+            class="logoimg"
+            src="/logo.png"
+            alt=""
+            onclick="window.location = '/'"
+          />
+          <div class="links">
+            <a href="./tos">TERMS OF SERVICE</a>
+            <a href="./privacy">PRIVACY POLICY</a>
+            <a href="./refund">REFUND POLICY</a>
+          </div>
+          <div class="socials">
+            <div
+              class="mail"
+              onclick="window.location='mailto:support@proxy-farm.com'"
+            >
+              <img src="./assets/mail.svg" />
+            </div>
+            <div
+              class="twitter"
+              onclick="window.location= 'https://twitter.com/proxyfarm'"
+            >
+              <img src="./assets/twitter.svg" />
+            </div>
+            <div class="tos" onclick="window.location= './tos'">
+              <img
+                src="https://img.icons8.com/material-rounded/96/ffffff/terms-and-conditions.png"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="main">
+        <div class="bar">
+          <div class="hamburger">
+            <div class="hamburger-box">
+              <div class="hamburger-inner"></div>
+            </div>
+          </div>
+        </div>
+        <div class="flex sp-bt topbar">
+          <div class="page">
+            <div class="header">Terms of Service</div>
+            <div class="smtext">
+              Please read our terms of service carefully.
+            </div>
+          </div>
+          <div class="user"></div>
+        </div>
+        <div class="service">
+          <p>-All Sales are final</p>
+          <p>
+            -By purchasing any item from Proxyfarm LLC, you agree to everything
+            in both the terms of service and privacy policy.
+          </p>
+          <p>
+            -Proxies being sold as a Digital product, There will be no refund or
+            exchanges issued.
+          </p>
+          <p>-No product sold by Proxyfarm LLC include or have warranties</p>
+          <p>
+            -Proxies will be delivered through email after a stripe receipt is
+            sent after the invoice is paid.
+          </p>
+          <p>
+            -Proxyfarm LLC will not be responsible for any throttles, bans, or
+            any other issues due to the misuse or abuse by the customer.
+          </p>
+          <p>
+            -Proxyfarm LLC does not guarantee any success by it’s users
+            purchasing any products from Proxyfarm LLC, and no proxy is
+            guarunteed to work.
+          </p>
+          <p>
+            -Proxies from Proxyfarm LLC is not proper evidence to ask for a
+            refund/chargeback.
+          </p>
+          <p>
+            -After purchasing any of our products, the usage of products from
+            Proxyfarm LLC not be responsible by Proxyfarm LLC, the customer will
+            have full responsibility and liability after purchase on the usage
+            of their purchase, which Proxyfarm LLC has zero liability for
+          </p>
+        </div>
+      </div>
+    </div>
+    <script>
+      let burger = document.querySelector(".bar");
+      let sidebar = document.querySelector(".scrollside");
+      let close = document.querySelector(".close");
+
+      burger.addEventListener("click", () => {
+        sidebar.classList.remove("none");
+      });
+
+      close.addEventListener("click", () => {
+        sidebar.classList.add("none");
+      });
+    </script>
+  </body>
+</html>

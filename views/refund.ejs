@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./style.css" />
+    <title>ProxyFarm - Buy | Refund Policy</title>
+    <link rel="icon" href="/logo.png" type="image/png" sizes="16x16" />
+  </head>
+  <body>
+    <div class="scrollside none">
+      <div class="sidebar">
+        <img
+          class="logoimg"
+          src="/logo.png"
+          alt=""
+          onclick="window.location = '/'"
+        />
+        <div class="links">
+          <a href="./tos">TERMS OF SERVICE</a>
+          <a href="./privacy">PRIVACY POLICY</a>
+          <a href="./refund">REFUND POLICY</a>
+        </div>
+        <div class="socials">
+          <div class="mail">
+            <img src="./assets/mail.svg" />
+          </div>
+          <div class="twitter">
+            <img src="./assets/twitter.svg" />
+          </div>
+          <div class="tos">
+            <img
+              src="https://img.icons8.com/material-rounded/96/ffffff/terms-and-conditions.png"
+            />
+          </div>
+        </div>
+        <div class="close">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="36"
+            height="36"
+            viewBox="0 0 18 18"
+          >
+            <path
+              fill="#fff"
+              d="M14.53 4.53l-1.06-1.06L9 7.94 4.53 3.47 3.47 4.53 7.94 9l-4.47 4.47 1.06 1.06L9 10.06l4.47 4.47 1.06-1.06L10.06 9z"
+            />
+          </svg>
+        </div>
+      </div>
+    </div>
+    <div class="container">
+      <div class="sidebarcontainer">
+        <div class="sidebar">
+          <img
+            class="logoimg"
+            src="/logo.png"
+            alt=""
+            onclick="window.location = '/'"
+          />
+          <div class="links">
+            <a href="./tos">TERMS OF SERVICE</a>
+            <a href="./privacy">PRIVACY POLICY</a>
+            <a href="./refund">REFUND POLICY</a>
+          </div>
+          <div class="socials">
+            <div
+              class="mail"
+              onclick="window.location='mailto:support@proxy-farm.com'"
+            >
+              <img src="./assets/mail.svg" />
+            </div>
+            <div
+              class="twitter"
+              onclick="window.location= 'https://twitter.com/proxyfarm'"
+            >
+              <img src="./assets/twitter.svg" />
+            </div>
+            <div class="tos" onclick="window.location= './tos'">
+              <img
+                src="https://img.icons8.com/material-rounded/96/ffffff/terms-and-conditions.png"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="main">
+        <div class="bar">
+          <div class="hamburger">
+            <div class="hamburger-box">
+              <div class="hamburger-inner"></div>
+            </div>
+          </div>
+        </div>
+        <div class="flex sp-bt topbar">
+          <div class="page">
+            <div class="header">Refund Policy</div>
+            <div class="smtext">Please read our refund policy carefully.</div>
+          </div>
+          <div class="user"></div>
+        </div>
+        <div class="service">
+          <p>
+            All products listed on our website are digital goods, therefore
+            making all sales final. Specific site access can change at any time
+            during the term of the monthly lease. No guarantee of any kind,
+            expressed or implied. Digital product - no refunds or replacements.
+            Proof of our digital products being delivered to the email address
+            provided by the customer constitutes legal fulfillment of the order.
+            If you have any questions please contact us at support@spap.xyz and
+            express any concerns you have.
+          </p>
+        </div>
+      </div>
+    </div>
+    <script>
+      let burger = document.querySelector(".bar");
+      let sidebar = document.querySelector(".scrollside");
+      let close = document.querySelector(".close");
+
+      burger.addEventListener("click", () => {
+        sidebar.classList.remove("none");
+      });
+
+      close.addEventListener("click", () => {
+        sidebar.classList.add("none");
+      });
+    </script>
+  </body>
+</html>
