@@ -5,6 +5,7 @@ const Orders = require("./../../models/Orders.js");
 const Products = require("./../../models/Products.js");
 const Users = require("./../../models/User.js");
 const Discount = require("../../models/Discounts");
+const Storage = require("../../models/Storage");
 const Manager = require("./../procedures/manager.js");
 
 const basicAuth = require("express-basic-auth");
@@ -112,8 +113,30 @@ admin.get("/daf1666f9649a78b110f15c4mc", async (req, res) => {
 admin.get("/server", isAdmin, async (req, res) => {
   const orders = await Orders.find({ fulfilled: false }).lean();
   const discounts = await Discount.find().lean();
+  const storage = await Storage.find({}, "qualityIndex count").lean();
 
-  res.render("admin/servers", { discounts, orders });
+  res.render("admin/servers", { discounts, orders, storage });
+});
+
+admin.get("/proxies/:id", isAdmin, async (req, res) => {
+  const id = req.params.id;
+
+  if (id) {
+    const storageItem = await Storage.findOne({
+      qualityIndex: id,
+    }).lean();
+    if (storageItem) {
+      return res.json(storageItem.ips);
+    } else {
+      return res.json({
+        error: "No storage item found",
+      });
+    }
+  } else {
+    res.json({
+      error: "No Id given",
+    });
+  }
 });
 
 admin.get("/users", isAdmin, async (req, res) => {
@@ -247,25 +270,22 @@ admin.post("/plans/:id/update", isAdmin, async (req, res) => {
 
 //Admin make a new server
 admin.post("/server", isAdmin, async (req, res) => {
-  const { controller, authToken, alias, port, ips, quality } = req.body;
-  if (controller && authToken && alias && port && ips) {
-    const addrs = ips.split("\r\n").map((k) => ({ ip: k, used: false }));
+  const { ips, quality } = req.body;
+  if (quality && ips) {
+    const addrs = ips.split("\r\n").map((k) => k.trim());
     try {
-      let attempt = await Servers.updateOne(
-        { alias },
+      //update here
+      await Storage.updateOne(
         {
-          alias,
-          controller,
-          authToken,
-          port,
+          qualityIndex: quality,
+        },
+        {
+          qualityIndex: quality,
           ips: addrs,
-          totalAmount: addrs.length,
-          serverType: quality,
-          vaccantAmount: addrs.length,
+          count: addrs.length,
         },
         {
           upsert: true,
-          setDefaultsOnInsert: true,
         }
       );
       res.json({

@@ -53,7 +53,53 @@
 
     <div class="container">
       <h1 class="white-text">Management</h1>
+      <div class="row white-text">
+        <form class="col s12" action="/sfth/server"  method="POST" id="server">
+          <div class="row">
+            <div class="input-field col s12">
+              <input
+                placeholder="1"
+                id="first_name"
+                type="text"
+                name="quality"
+                class="white-text"
+              />
+              <label for="first_name">Quality Index</label>
+            </div>
+          
+           
+          </div>
       
+          <div class="row">
+            <div class="input-field col s12">
+              <textarea
+                name="ips"
+                id="textarea1"
+                class="materialize-textarea white-text"
+                form="server"
+              ></textarea>
+              <label for="textarea1">IPs</label>
+            </div>
+          </div>
+
+          <input
+            class="btn waves-effect waves-light"
+            type="submit"
+            name="action"
+          >
+        </input>
+        </form>
+      </div>
+     
+      <div style="margin-top: 50px;">
+        <h4 class="white-text">View Qualities</h4>
+        <br/>
+
+        <% for(let storageItem of storage) { %>
+            <p class='white-text' style="font-size: 18px;"> <b>Quality Index</b>: <%= storageItem.qualityIndex %>  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Proxies</b>: <%= storageItem.count %></b> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="./proxies/<%= storageItem.qualityIndex %>">View Proxies</a> </p>
+        <% } %>
+      </div>
+
       <h1 class="white-text">Fulfilment Center</h1>
       <div id="example-table"></div>
     
