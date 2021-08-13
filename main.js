@@ -42,8 +42,8 @@ passport.use(
     {
       authorizationURL: "https://discord.com/api/oauth2/authorize",
       tokenURL: "https://discord.com/api/oauth2/token",
-      clientID: "470226299122876446",
-      clientSecret: "ymgJamVr8UD52jwh2h7fu8BHLdV_xeaW",
+      clientID: "818995376090382386",
+      clientSecret: "5IIq11Vrw6ILQQ5ygNhCv7TMb4oYYAFZ",
       callbackURL: process.env.CALLBACK,
     },
     async function (accessToken, refreshToken, profile, cb) {
