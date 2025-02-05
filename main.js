@@ -96,7 +96,7 @@ mongoose
     useCreateIndex: true,
     useFindAndModify: true,
   })
-  .catch((error) => handleError(error));
+  .catch((error) => console.log(error));
 
 const Products = require("./models/Products.js");
 const Order = require("./models/Orders");
