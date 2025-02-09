@@ -22,6 +22,7 @@ app.use(express.static("public"));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.set("view engine", "ejs");
+app.set("views", "/home/ubuntu/proxyfarmwebsite/views");
 app.use(
   session({
     secret: "keyboard cat",
